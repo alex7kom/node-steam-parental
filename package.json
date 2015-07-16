@@ -1,0 +1,18 @@
+{
+  "name": "steam-parental",
+  "version": "0.0.1",
+  "description": "Steam Parental Unlock",
+  "author": "Alexey Komarov <alex7kom@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "steam"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alex7Kom/node-steam-parental.git"
+  },
+  "dependencies": {
+    "request": "^2.58.0"
+  },
+  "scripts": {}
+}
