@@ -2,11 +2,11 @@ var request = require('request');
 
 var steamDomain = 'https://steamcommunity.com';
 
-function parentalUnlock(options, callback) {
+function parentalUnlock (options, callback) {
   var cookieJar = request.jar();
   var _request = request.defaults({ jar: cookieJar });
 
-  options.webCookie.forEach(function(name) {
+  options.webCookie.forEach(function (name) {
     cookieJar.setCookie(request.cookie(name), steamDomain);
   });
 
@@ -19,11 +19,11 @@ function parentalUnlock(options, callback) {
     form: {
       pin: options.PIN
     }
-  }, function(error, response, body) {
-    if (error || response.statusCode != 200) {
+  }, function (error, response, body) {
+    if (error || response.statusCode !== 200) {
       return callback(error || new Error(response.statusCode));
     }
-    if (!body || typeof body.success != 'boolean') {
+    if (!body || typeof body.success !== 'boolean') {
       return callback(new Error('Invalid Response'));
     }
     if (!body.success) {
